@@ -1,0 +1,18 @@
+require_relative '../automated_init'
+
+context "Validation" do
+  context "Schema has all attributes" do
+    schema = Controls::Schema.example
+
+    errors = []
+    valid = Validate.(schema, errors, scenario: :has_all_attributes)
+
+    test "Is invalid" do
+      refute(valid)
+    end
+
+    test "An error is recorded for each attribute" do
+      assert(errors == Controls::Schema.errors)
+    end
+  end
+end
