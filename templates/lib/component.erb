@@ -1,0 +1,13 @@
+require 'date'
+
+require 'eventide'
+require 'collection'
+require 'validate'
+require 'initializer'; Initializer.activate
+
+require '<%= name %>_component/validation/has_all_attributes'
+
+require '<%= name %>_component/projection'
+require '<%= name %>_component/store'
+require '<%= name %>_component/stream_names'
+require '<%= name %>_component/handlers/commands'

@@ -1,0 +1,10 @@
+module <%= "#{name.camelize}Component" %>
+  class Store
+    include EventStore::EntityStore
+
+    # Example Store config replace with real entity name
+    #category :entity
+    #entity Entity
+    projection Projection
+  end
+end

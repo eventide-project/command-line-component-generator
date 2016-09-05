@@ -1,0 +1,14 @@
+module <%= "#{name.camelize}Component" %>
+  class Projection
+    include EventStore::EntityProjection
+    include <%= "#{name.camelize}Component" %>::Events
+    
+    # TODO provide entity name
+    #entity_name :entity
+
+    # Example projection
+    #apply Initiated do |initiated|
+    #  entity.id = initiated.loan_id
+    #end
+  end
+end
