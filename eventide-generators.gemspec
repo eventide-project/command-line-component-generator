@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'eventide/generators/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "eventide-generators"
-  spec.version       = Eventide::Generators::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Aaron Dufall"]
   spec.email         = ["aald212@gmail.com"]
   spec.summary       = %q{Eventide project generation}
