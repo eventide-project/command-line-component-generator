@@ -7,6 +7,10 @@ module Eventide
     def lisp_case
       self.dup.gsub('_','-')
     end
+
+    def titleize
+      self.dup.split.each{|x| x.capitalize!}.join(' ')
+    end
   end
 end
 
