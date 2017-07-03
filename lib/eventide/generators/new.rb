@@ -40,7 +40,7 @@ module Eventide
       end
 
       def create_settings
-        copy_file(template_dir + 'settings/event_store_client_http.json', "#{component_folder}/setting/event_store_client_http.json")
+        copy_file(template_dir + 'settings/message_store_postgres.json.example', "#{component_folder}/setting/message_store_postgres.json.example")
       end
 
       def create_test
