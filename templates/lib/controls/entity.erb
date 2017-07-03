@@ -1,0 +1,36 @@
+module <%= "#{name.camelize}Component" %>
+  module Controls
+    module Skeleton
+      def self.example
+        <%= "#{name.downcase}" %> = <%= "#{name.camelize}Component" %>::<%= "#{name.camelize}" %>.build
+
+        <%= "#{name.downcase}" %>.id = self.id
+        <%= "#{name.downcase}" %>.something_happened_time = Time::Effective::Raw.example
+
+        <%= "#{name.downcase}" %>
+      end
+
+      def self.id
+        ID.example(increment: id_increment)
+      end
+
+      def self.id_increment
+        1111
+      end
+
+      module New
+        def self.example
+          <%= "#{name.camelize}Component" %>::<%= "#{name.camelize}" %>.build
+        end
+      end
+
+      module Identified
+        def self.example
+          <%= "#{name.downcase}" %> = New.example
+          <%= "#{name.downcase}" %>.id = <%= "#{name.camelize}" %>.id
+          <%= "#{name.downcase}" %>
+        end
+      end
+    end
+  end
+end

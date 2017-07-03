@@ -8,26 +8,33 @@ module Eventide
         File.dirname(__FILE__)
       end
 
-      def create_lib
-        lib_folder = "#{component_folder}/lib"
-           
+      def create_lib           
         template(template_dir + 'lib/component.erb', "#{lib_folder}/#{source_name}.rb")
 
-        empty_directory("#{lib_folder}/#{source_name}/commands")
-        empty_directory("#{lib_folder}/#{source_name}/controls/commands")
-        empty_directory("#{lib_folder}/#{source_name}/controls/events")
         empty_directory("#{lib_folder}/#{source_name}/events")
 
-        template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
+        # template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
         template(template_dir + 'lib/projection.erb', "#{lib_folder}/#{source_name}/projection.rb")
         template(template_dir + 'lib/store.erb', "#{lib_folder}/#{source_name}/store.rb")
 
         # TODO make example command handler optional or move to seperate generator
         template(template_dir + 'lib/handlers/commands.erb', "#{lib_folder}/#{source_name}/handlers/commands.rb")
         
-        # TODO make example test optional or move to seperate generator
-        template(template_dir + 'lib/controls/schema.erb',"#{lib_folder}/#{source_name}/controls/schema.rb")
+        
         template(template_dir + 'lib/validation/has_all_attributes.erb', "#{lib_folder}/#{source_name}/validation/has_all_attributes.rb")
+      end
+
+      def create_controls
+        empty_directory("#{lib_folder}/#{source_name}/controls/messages")
+        create_file("#{lib_folder}/#{source_name}/controls/messages/.gitkeep")
+        empty_directory("#{lib_folder}/#{source_name}/controls/events")
+        create_file("#{lib_folder}/#{source_name}/controls/events/.gitkeep")
+
+        template(template_dir + 'lib/controls/id.erb', "#{lib_folder}/#{source_name}/controls/id.rb")
+        template(template_dir + 'lib/controls/entity.erb',"#{lib_folder}/#{source_name}/controls/#{name}.rb")
+        template(template_dir + 'lib/controls/time.erb', "#{lib_folder}/#{source_name}/controls/time.rb")
+        template(template_dir + 'lib/controls/version.erb', "#{lib_folder}/#{source_name}/controls/version.rb")
+        template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
       end
 
       def create_settings
@@ -80,6 +87,10 @@ module Eventide
 
       def component_folder
         "#{name.lisp_case}-component"
+      end
+
+      def lib_folder
+        "#{component_folder}/lib"
       end
 
       def template_dir
