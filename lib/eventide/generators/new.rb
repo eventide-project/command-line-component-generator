@@ -46,40 +46,34 @@ module Eventide
       def create_test
         test_folder = "#{component_folder}/test"
 
-        empty_directory("#{test_folder}/fixtures")
-        empty_directory("#{test_folder}/automated/handle_commands")
-        empty_directory("#{test_folder}/automated/projection")
-        empty_directory("#{test_folder}/automated/validation")
+        create_file("#{test_folder}/automated/handle_commands/.gitkeep")
+        create_file("#{test_folder}/automated/projection/.gitkeep")
+        create_file("#{test_folder}/automated/#{name.downcase}/.gitkeep")
 
         copy_file(template_dir + 'test/automated.rb', "#{test_folder}/automated.rb")
+        copy_file(template_dir + 'test/automated/automated_init.rb', "#{test_folder}/automated/automated_init.rb")
+        copy_file(template_dir + 'test/automated/database_connection.rb', "#{test_folder}/automated/database_connection.rb")
 
         template(template_dir + 'test/test_init.erb', "#{test_folder}/test_init.rb")
-        template(template_dir + 'test/logger_settings.erb', "#{test_folder}/logger_settings.rb")
-        template(template_dir + 'test/automated/automated_init.erb', "#{test_folder}/automated/automated_init.rb")
-        template(template_dir + 'test/script/script_init.erb', "#{test_folder}/script/script_init.rb")
-        
-        # TODO make example test optional or move to seperate generator
-        template(template_dir + 'test/automated/validation/has_all_attributes.erb', "#{test_folder}/automated/validation/has_all_attributes.rb")   
       end
 
       def create_root
         copy_file(template_dir + '_gitignore', "#{component_folder}/.gitignore")
-        copy_file(template_dir + 'load_path.rb', "#{component_folder}/load_path.rb")
         copy_file(template_dir + 'install-gems.sh', "#{component_folder}/install-gems.sh")
-        copy_file(template_dir + 'set-local-gem-path.sh', "#{component_folder}/set-local-gem-path.sh")
-        copy_file(template_dir + 'test.rb', "#{component_folder}/test.rb")
+        copy_file(template_dir + 'load_path.rb', "#{component_folder}/load_path.rb")
+        copy_file(template_dir + 'test.sh', "#{component_folder}/test.sh")
 
         template(template_dir + 'init.erb', "#{component_folder}/init.rb")
+        template(template_dir + 'Gemfile.erb', "#{component_folder}/Gemfile")
         template(template_dir + "component.gemspec.temp", "#{component_folder}/#{source_name}.gemspec")
 
         chmod("#{component_folder}/install-gems.sh", 0755)
-        chmod("#{component_folder}/set-local-gem-path.sh", 0755)
+        chmod("#{component_folder}/test.sh", 0755)
       end
 
       def finish
         say "\nSuccess!\n\n", :cyan
         say "cd #{component_folder}", :yellow
-        say "export GEM_AUTHORITY_PATH=gem.fury.io/eventide", :yellow
         say "POSTURE='development' ./install-gems.sh\n\n", :yellow
       end
 

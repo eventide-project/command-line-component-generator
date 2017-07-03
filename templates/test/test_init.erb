@@ -1,13 +1,14 @@
-puts RUBY_DESCRIPTION
+ENV['CONSOLE_DEVICE'] ||= 'stdout'
+ENV['LOG_LEVEL'] ||= '_min'
 
-require_relative 'logger_settings'
+puts RUBY_DESCRIPTION
 
 require_relative '../init.rb'
 
 require 'test_bench'; TestBench.activate
 
-require '<%= name %>_component/controls'
-
 require 'pp'
+
+require '<%= name %>_component/controls'
 
 include <%= "#{name.camelize}Component" %>
