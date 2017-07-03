@@ -15,10 +15,7 @@ module Eventide
 
         # template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
         template(template_dir + 'lib/projection.erb', "#{lib_folder}/#{source_name}/projection.rb")
-        template(template_dir + 'lib/store.erb', "#{lib_folder}/#{source_name}/store.rb")
-
-        # TODO make example command handler optional or move to seperate generator
-        template(template_dir + 'lib/handlers/commands.erb', "#{lib_folder}/#{source_name}/handlers/commands.rb")
+        template(template_dir + 'lib/store.erb', "#{lib_folder}/#{source_name}/store.rb")        
         
         
         template(template_dir + 'lib/validation/has_all_attributes.erb', "#{lib_folder}/#{source_name}/validation/has_all_attributes.rb")
@@ -35,6 +32,11 @@ module Eventide
         template(template_dir + 'lib/controls/time.erb', "#{lib_folder}/#{source_name}/controls/time.rb")
         template(template_dir + 'lib/controls/version.erb', "#{lib_folder}/#{source_name}/controls/version.rb")
         template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
+      end
+
+      def create_handlers
+        template(template_dir + 'lib/handlers/commands.erb', "#{lib_folder}/#{source_name}/handlers/commands.rb")
+        template(template_dir + 'lib/handlers/events.erb', "#{lib_folder}/#{source_name}/handlers/events.rb")
       end
 
       def create_settings
