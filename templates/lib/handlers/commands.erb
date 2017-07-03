@@ -1,50 +1,44 @@
 module <%= "#{name.camelize}Component" %>
   module Handlers
     class Commands
-      include EventStore::Messaging::Handler
-      include EventStore::Messaging::StreamName
-      include <%= "#{name.camelize}Component" %>::Commands
-      include <%= "#{name.camelize}Component" %>::Events
+      include Messaging::Handle
+      include Messaging::StreamName
+      include Log::Dependency
+      include Messages::Commands
+      include Messages::Events
 
-      dependency :writer, EventStore::Messaging::Writer
-      dependency :store, <%= "#{name.camelize}Component" %>::Store
-      dependency :identifier, Identifier::UUID::Random
+      dependency :write, Messaging::Postgres::Write
       dependency :clock, Clock::UTC
+      dependency :store, Store
 
       def configure
-        EventStore::Messaging::Writer.configure self
-        PositionComponent::Store.configure self
-        Identifier::UUID::Random.configure self
-        Clock::UTC.configure self
+        Messaging::Postgres::Write.configure(self)
+        Clock::UTC.configure(self)
+        Store.configure(self)
       end
-      
-      # TODO replace real category name
-      # category :entity
 
-      # Example handler
-      # handle Initiate do |initiate|
-      #   logger.trace "Handling initiate"
-      #   logger.data "#{initiate.inspect}"
-      #   Validate.(initiate, scenario: :has_all_attributes)
-      #
-      #   entity_id = initiate.entity_id
-      #
-      #   entity = store.get(entity_id)
-      #
-      #   unless entity.nil?
-      #     logger.debug "#{initiated} command was ignored. entity #{entity_id} was already initiated."
+      category :<%= "#{name.downcase}" %>
+
+      # TODO Implement command handler block
+      # eg:
+      # handle DoSomething do |do_something|
+      #   <%= "#{name.downcase}" %>_id = do_something.<%= "#{name.downcase}" %>_id
+
+      #   <%= "#{name.downcase}" %>, version = store.fetch(<%= "#{name.downcase}" %>_id, include: :version)
+
+      #   if <%= "#{name.downcase}" %>.something_happened?
+      #     logger.info(tag: :ignored) { "Command ignored (Command: #{do_something.message_type}, <%= "#{name.downcase}" %> ID: #{<%= "#{name.downcase}" %>_id})" }
       #     return
       #   end
-      #
-      #   initiated = Initiated.proceed initiate
-      #
-      #   initiated.processed_time = clock.iso8601
-      #
-      #   stream_name = stream_name(entity_id)
-      #
-      #   writer.write_initial initiated, stream_name
-      #   logger.debug "Handled initiate"
-      #end
+
+      #   something_happened = SomethingHappened.follow(do_something)
+
+      #   something_happened.processed_time = clock.iso8601
+
+      #   stream_name = stream_name(<%= "#{name.downcase}" %>_id)
+
+      #   write.(something_happened, stream_name, expected_version: version)
+      # end
     end
   end
 end

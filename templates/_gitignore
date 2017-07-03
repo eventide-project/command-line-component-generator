@@ -1,6 +1,5 @@
-.DS_Store
-gems
+.bundle/
+Gemfile.lock
 *.gem
-.support_config
-*scratch*
-*notes*
+gems
+settings/message_store_postgres.json

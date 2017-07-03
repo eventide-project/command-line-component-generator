@@ -1,10 +1,10 @@
 module <%= "#{name.camelize}Component" %>
   class Store
-    include EventStore::EntityStore
+    include EntityStore
 
-    # Example Store config replace with real entity name
-    #category :entity
-    #entity Entity
+    category :<%= "#{name.downcase}" %>
+    entity <%= "#{name.camelize}" %>
     projection Projection
+    reader MessageStore::Postgres::Read
   end
 end

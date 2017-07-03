@@ -7,17 +7,14 @@ Gem::Specification.new do |s|
 
   s.authors = ['TODO']
   s.homepage = 'TODO'
-  s.licenses = ['Not licensed for public use']
+  s.licenses = ['MIT']
 
   s.require_paths = ['lib']
   s.files = Dir.glob('{lib}/**/*')
   s.platform = Gem::Platform::RUBY
-  s.required_ruby_version = '>= 2.3.0'
+  s.required_ruby_version = '>= 2.4'
 
-  s.add_runtime_dependency 'eventide'
-  s.add_runtime_dependency 'collection'
-  s.add_runtime_dependency 'validate'
-  s.add_runtime_dependency 'initializer'
+  s.add_runtime_dependency 'eventide-postgres'
 
   s.add_development_dependency 'test_bench'
 end
