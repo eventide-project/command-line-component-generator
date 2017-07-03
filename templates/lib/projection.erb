@@ -1,14 +1,20 @@
 module <%= "#{name.camelize}Component" %>
   class Projection
-    include EventStore::EntityProjection
-    include <%= "#{name.camelize}Component" %>::Events
-    
-    # TODO provide entity name
-    #entity_name :entity
+    include EntityProjection
+    include Messages::Events
 
-    # Example projection
-    #apply Initiated do |initiated|
-    #  entity.id = initiated.loan_id
-    #end
+    entity_name :<%= "#{name.downcase}" %>
+
+    # TODO Implement event projection blocks
+    # eg:
+    # apply SomethingHappened do |something_happened|
+    #   SetAttributes.(<%= "#{name.downcase}" %>, something_happened, copy: [
+    #     { :<%= "#{name.downcase}" %>_id => :id }
+    #   ])
+
+    #   something_happened_time = Clock.parse(something_happened.time)
+
+    #   <%= "#{name.downcase}" %>.something_happened_time = something_happened_time
+    # end
   end
 end

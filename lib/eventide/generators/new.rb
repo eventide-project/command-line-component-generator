@@ -9,13 +9,14 @@ module Eventide
       end
 
       def create_lib           
-        template(template_dir + 'lib/component.erb', "#{lib_folder}/#{source_name}.rb")
+        template(template_dir + 'lib/component.erb', "#{lib_folder}/#{source_name}.rb")   
+      end
 
+      def create_component
+        template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
+        template(template_dir + 'lib/entity.erb', "#{lib_folder}/#{source_name}/#{name}.rb")
         template(template_dir + 'lib/projection.erb', "#{lib_folder}/#{source_name}/projection.rb")
-        template(template_dir + 'lib/store.erb', "#{lib_folder}/#{source_name}/store.rb")        
-        
-        
-        template(template_dir + 'lib/validation/has_all_attributes.erb', "#{lib_folder}/#{source_name}/validation/has_all_attributes.rb")
+        template(template_dir + 'lib/store.erb', "#{lib_folder}/#{source_name}/store.rb")   
       end
 
       def create_controls
@@ -26,7 +27,6 @@ module Eventide
         template(template_dir + 'lib/controls/entity.erb',"#{lib_folder}/#{source_name}/controls/#{name}.rb")
         template(template_dir + 'lib/controls/time.erb', "#{lib_folder}/#{source_name}/controls/time.rb")
         template(template_dir + 'lib/controls/version.erb', "#{lib_folder}/#{source_name}/controls/version.rb")
-        template(template_dir + 'lib/controls.erb', "#{lib_folder}/#{source_name}/controls.rb")
       end
 
       def create_handlers
