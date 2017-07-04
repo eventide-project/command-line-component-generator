@@ -3,7 +3,11 @@ module CommandLine
     class New < Thor::Group
       include Thor::Actions
 
-      argument :name
+      argument :component_name
+
+      def self.source_root
+        File.dirname(__FILE__)
+      end
 
       def create_lib
         template(template_dir + 'lib/component.erb', "#{lib_dir}/#{source_name}.rb")
@@ -11,7 +15,7 @@ module CommandLine
 
       def create_component
         template(template_dir + 'lib/controls.erb', "#{lib_dir}/#{source_name}/controls.rb")
-        template(template_dir + 'lib/entity.erb', "#{lib_dir}/#{source_name}/#{name}.rb")
+        template(template_dir + 'lib/entity.erb', "#{lib_dir}/#{source_name}/#{component_name}.rb")
         template(template_dir + 'lib/projection.erb', "#{lib_dir}/#{source_name}/projection.rb")
         template(template_dir + 'lib/store.erb', "#{lib_dir}/#{source_name}/store.rb")
       end
@@ -21,7 +25,7 @@ module CommandLine
         create_file("#{lib_dir}/#{source_name}/controls/events/.gitkeep")
 
         template(template_dir + 'lib/controls/id.erb', "#{lib_dir}/#{source_name}/controls/id.rb")
-        template(template_dir + 'lib/controls/entity.erb',"#{lib_dir}/#{source_name}/controls/#{name}.rb")
+        template(template_dir + 'lib/controls/entity.erb',"#{lib_dir}/#{source_name}/controls/#{component_name}.rb")
         template(template_dir + 'lib/controls/time.erb', "#{lib_dir}/#{source_name}/controls/time.rb")
         template(template_dir + 'lib/controls/version.erb', "#{lib_dir}/#{source_name}/controls/version.rb")
       end
@@ -45,7 +49,7 @@ module CommandLine
 
         create_file("#{test_folder}/automated/handle_commands/.gitkeep")
         create_file("#{test_folder}/automated/projection/.gitkeep")
-        create_file("#{test_folder}/automated/#{name.downcase}/.gitkeep")
+        create_file("#{test_folder}/automated/#{component_name.downcase}/.gitkeep")
 
         copy_file(template_dir + 'test/automated.rb', "#{test_folder}/automated.rb")
         copy_file(template_dir + 'test/automated/automated_init.rb', "#{test_folder}/automated/automated_init.rb")
@@ -75,11 +79,11 @@ module CommandLine
       end
 
       def source_name
-        "#{name}_component"
+        "#{component_name}_component"
       end
 
       def component_dir
-        "#{name.lisp_case}-component"
+        "#{component_name.lisp_case}-component"
       end
 
       def lib_dir
