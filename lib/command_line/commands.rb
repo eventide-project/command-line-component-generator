@@ -1,6 +1,6 @@
 module CommandLine
   class Commands < Thor
-    register(CommandLine::Generator::New, 'new', 'new COMPONENT_NAME', 'Generates a new eventide component')
+    register(CommandLine::Generator::New, 'new', 'new component_name', 'Generates a new Eventide component')
   end
 end
 
