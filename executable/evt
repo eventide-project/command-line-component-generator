@@ -5,5 +5,5 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'thor'
 require 'thor/group'
-require 'command_line/generators'
+require 'command_line/project_generator'
 require 'command_line/commands'
