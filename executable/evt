@@ -1,7 +1,9 @@
+#!/usr/bin/env ruby
+
 lib = File.expand_path('../../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require 'thor'
 require 'thor/group'
-require 'eventide/generators'
-require 'eventide/commands'
+require 'command_line/generators'
+require 'command_line/commands'

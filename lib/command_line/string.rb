@@ -1,4 +1,4 @@
-module Eventide
+module CommandLine
   module String
     def camelize
       self.dup.split('_').map {|w| w.capitalize}.join
@@ -14,5 +14,5 @@ module Eventide
   end
 end
 
-String.include Eventide::String
+String.include CommandLine::String
 
