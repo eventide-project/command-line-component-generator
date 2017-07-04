@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.licenses = ['MIT']
 
   s.require_paths = ['lib']
-  s.files = Dir.glob('{lib}/**/*')
+  s.files = Dir.glob('{lib,templates}/**/*')
   s.executables = Dir.glob('{executable}/**/*')
   s.platform = Gem::Platform::RUBY
   s.required_ruby_version = '>= 2.4.0'
