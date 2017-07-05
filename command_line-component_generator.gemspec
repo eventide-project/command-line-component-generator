@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-command_line-component_generator'
-  s.version = '0.0.0.0'
+  s.version = '0.1.0.0'
   s.summary = 'Command line project generator'
   s.description = ' '
 
   s.authors = ['The Eventide Project']
   s.email = 'opensource@eventide-project.org'
-  s.homepage = 'https://github.com/eventide-project/command-line-project-generator'
+  s.homepage = 'https://github.com/eventide-project/command-line-component-generator'
   s.licenses = ['MIT']
 
   s.require_paths = ['lib']
