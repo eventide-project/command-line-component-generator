@@ -9,6 +9,6 @@ require 'test_bench'; TestBench.activate
 
 require 'pp'
 
-require '<%= name %>_component/controls'
+require '<%= component_name %>/controls'
 
-include <%= "#{name.camelize}Component" %>
+include <%= component_constant_name %>

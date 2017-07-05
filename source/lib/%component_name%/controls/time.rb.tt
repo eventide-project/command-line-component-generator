@@ -1,4 +1,4 @@
-module <%= "#{name.camelize}Component" %>
+module <%= component_constant_name %>
   module Controls
     module Time
       def self.example(time=nil)

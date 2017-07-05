@@ -1,0 +1,10 @@
+module <%= component_constant_name %>
+  class Store
+    include EntityStore
+
+    category :<%= entity_name %>
+    entity <%= entity_constant_name %>
+    projection Projection
+    reader MessageStore::Postgres::Read
+  end
+end

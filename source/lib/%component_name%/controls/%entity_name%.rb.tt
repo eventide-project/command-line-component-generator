@@ -1,0 +1,36 @@
+module <%= component_constant_name %>
+  module Controls
+    module <%= entity_constant_name %>
+      def self.example
+        <%= entity_name %> = <%= component_constant_name %>::<%= entity_constant_name %>.build
+
+        <%= entity_name %>.id = self.id
+        <%= entity_name %>.something_happened_time = Time::Effective::Raw.example
+
+        <%= entity_name %>
+      end
+
+      def self.id
+        ID.example(increment: id_increment)
+      end
+
+      def self.id_increment
+        1111
+      end
+
+      module New
+        def self.example
+          <%= component_constant_name %>::<%= entity_constant_name %>.build
+        end
+      end
+
+      module Identified
+        def self.example
+          <%= entity_name %> = New.example
+          <%= entity_name %>.id = <%= entity_constant_name %>.id
+          <%= entity_name %>
+        end
+      end
+    end
+  end
+end

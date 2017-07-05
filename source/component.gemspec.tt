@@ -1,13 +1,13 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
-  s.name = '<%= "#{name}_component" %>'
+  s.name = '<%= component_name %>'
   s.version = '0.0.0'
-  s.summary = '<%= "#{name}_component".gsub("_", " ").titleize %>'
+  s.summary = ' '
   s.description = ' '
 
-  s.authors = ['TODO']
-  s.homepage = 'TODO'
-  s.licenses = ['MIT']
+  s.authors = ['email@domain.com']
+  s.homepage = 'http://domain.com'
+  s.licenses = ['TODO']
 
   s.require_paths = ['lib']
   s.files = Dir.glob('{lib}/**/*')
