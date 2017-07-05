@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-. ./test/generated_component/test.sh
+. ./test/interactive/test.sh
