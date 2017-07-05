@@ -1,30 +1,21 @@
-# Eventide::Generators
+# Eventide Command Line Component Generator
 
-TODO: Write a gem description
+## Summary
+
+The `command_line-component_generator` library contains primitives for writing and reading messages, as well as message handlers and mixins for message schemas and stream name utilities.
+
+## Example
+
+```
+$ evt component some_component
+```
 
 ## Installation
 
-Add this line to your application's Gemfile:
+```
+$ gem install evt-command_line-component_generator
+```
 
-    gem 'eventide-generators'
+## License
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install eventide-generators
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/eventide-generators/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
-# eventide-generators
+The `command_line-component_generator` library is released under the [MIT License](https://github.com/eventide-project/command-line-component-generator/blob/master/MIT-License.txt).
