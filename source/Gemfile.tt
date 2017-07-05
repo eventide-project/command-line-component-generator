@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gemspec name: '<%= "#{name.downcase}_component" %>'
+gemspec name: '<%= component_name %>'
 
 gem 'evt-component_host'

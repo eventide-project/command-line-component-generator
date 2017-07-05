@@ -1,0 +1,12 @@
+require 'clock/controls'
+require 'identifier/uuid/controls'
+
+require '<%= component_name %>/controls/id'
+require '<%= component_name %>/controls/time'
+require '<%= component_name %>/controls/version'
+
+require '<%= component_name %>/controls/<%= entity_name %>'
+
+# require '<%= component_name %>/controls/commands/...'
+
+# require '<%= component_name %>/controls/events/...'

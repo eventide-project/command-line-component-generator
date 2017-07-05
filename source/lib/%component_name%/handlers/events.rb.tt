@@ -1,4 +1,4 @@
-module <%= "#{name.camelize}Component" %>
+module <%= component_constant_name %>
   module Handlers
     class Events
       include Messaging::Handle
@@ -8,7 +8,7 @@ module <%= "#{name.camelize}Component" %>
       include Messages::Events
 
       # TODO Implement event handler blocks
-      # Note: Delete if not handling events
+      # Note: Delete this file if not handling events
 
       # handle SomethingHappened do |something_happened|
       # end

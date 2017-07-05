@@ -1,5 +1,5 @@
-module <%= "#{name.camelize}Component" %>
-  class <%= "#{name.camelize}" %>
+module <%= component_constant_name %>
+  class <%= entity_constant_name %>
     include Schema::DataStructure
 
     attribute :id, String

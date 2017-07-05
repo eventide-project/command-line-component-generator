@@ -1,4 +1,4 @@
-module <%= "#{name.camelize}Component" %>
+module <%= component_constant_name %>
   module Controls
     module Version
       def self.example

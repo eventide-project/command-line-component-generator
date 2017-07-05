@@ -1,4 +1,4 @@
-module <%= "#{name.camelize}Component" %>
+module <%= component_constant_name %>
   module Handlers
     class Commands
       include Messaging::Handle
@@ -17,17 +17,17 @@ module <%= "#{name.camelize}Component" %>
         Store.configure(self)
       end
 
-      category :<%= "#{name.downcase}" %>
+      category :<%= entity_name %>
 
       # TODO Implement command handler block
       # eg:
       # handle DoSomething do |do_something|
-      #   <%= "#{name.downcase}" %>_id = do_something.<%= "#{name.downcase}" %>_id
+      #   <%= entity_name %>_id = do_something.<%= entity_name %>_id
 
-      #   <%= "#{name.downcase}" %>, version = store.fetch(<%= "#{name.downcase}" %>_id, include: :version)
+      #   <%= entity_name %>, version = store.fetch(<%= entity_name %>_id, include: :version)
 
-      #   if <%= "#{name.downcase}" %>.something_happened?
-      #     logger.info(tag: :ignored) { "Command ignored (Command: #{do_something.message_type}, <%= "#{name.downcase}" %> ID: #{<%= "#{name.downcase}" %>_id})" }
+      #   if <%= entity_name %>.something_happened?
+      #     logger.info(tag: :ignored) { "Command ignored (Command: #{do_something.message_type}, <%= entity_constant_name %> ID: #{<%= entity_name %>_id})" }
       #     return
       #   end
 
@@ -35,7 +35,7 @@ module <%= "#{name.camelize}Component" %>
 
       #   something_happened.processed_time = clock.iso8601
 
-      #   stream_name = stream_name(<%= "#{name.downcase}" %>_id)
+      #   stream_name = stream_name(<%= entity_name %>_id)
 
       #   write.(something_happened, stream_name, expected_version: version)
       # end

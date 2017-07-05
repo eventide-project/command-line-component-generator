@@ -1,0 +1,11 @@
+require 'eventide/postgres'
+
+# require '<%= component_name %>/messages/commands/...'
+# require '<%= component_name %>/messages/events/...'
+
+require '<%= component_name %>/<%= entity_name %>'
+require '<%= component_name %>/projection'
+require '<%= component_name %>/store'
+
+require '<%= component_name %>/handlers/commands'
+require '<%= component_name %>/handlers/events'
