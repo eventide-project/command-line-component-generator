@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
-  s.name = 'evt-command_line-project_generator'
+  s.name = 'evt-command_line-component_generator'
   s.version = '0.0.0.0'
   s.summary = 'Command line project generator'
   s.description = ' '

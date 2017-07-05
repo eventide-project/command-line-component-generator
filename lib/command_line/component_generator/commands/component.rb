@@ -1,5 +1,5 @@
 module CommandLine
-  module ProjectGenerator
+  module ComponentGenerator
     module Commands
       class Component < Thor::Group
         include Thor::Actions
@@ -39,7 +39,7 @@ module CommandLine
           directory('./')
         end
 
-        def assign_executable
+        def assign_executable_attribute
           chmod './install-gems.sh', 0755
           chmod './test.sh', 0755
         end
