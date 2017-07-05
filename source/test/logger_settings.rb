@@ -6,4 +6,3 @@ else
   ENV['LOG_LEVEL'] ||= 'trace'
 end
 ENV['LOGGER'] ||= 'off'
-ENV['LOG_OPTIONAL'] ||= 'on'
