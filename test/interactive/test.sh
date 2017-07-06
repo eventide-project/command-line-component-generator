@@ -21,6 +21,8 @@ if [ ! -f something_component-0.0.0.gem ]; then
   exit
 fi
 
+cp settings/message_store_postgres.json.example settings/message_store_postgres.json
+
 ruby ../test.rb
 
 pwd
