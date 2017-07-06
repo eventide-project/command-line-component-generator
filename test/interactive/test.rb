@@ -10,5 +10,5 @@ puts "Loading the Component Initializer"
 require_relative 'something-component/test/automated.rb'
 
 puts "= = ="
-puts "Component Loaded"
+puts "Component Generated and Tested"
 puts
