@@ -5,8 +5,7 @@ puts "- - -"
 puts "Defining the messages namespace"
 require_relative 'messages_namespace'
 
-puts "Loading the Component Initializer"
-# require_relative 'something-component/init'
+puts "Testing the Component Initialization and Message Store Connection"
 require_relative 'something-component/test/automated.rb'
 
 puts "= = ="

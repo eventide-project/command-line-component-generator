@@ -25,6 +25,4 @@ cp settings/message_store_postgres.json.example settings/message_store_postgres.
 
 ruby ../test.rb
 
-pwd
-
 echo
