@@ -2,7 +2,7 @@
 
 ## Summary
 
-The `command_line-component_generator` library contains primitives for writing and reading messages, as well as message handlers and mixins for message schemas and stream name utilities.
+The `command_line-component_generator` creates a component skeleton. It generates placeholders for message handlers, messages, an entity, projection, and store. It generates a settings file for the Postgres database connection, a test directory with supporting files to initialize the component during testing, as well as placeholders for test controls.
 
 ## Usage
 
