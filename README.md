@@ -4,7 +4,7 @@
 
 The `command_line-component_generator` library contains primitives for writing and reading messages, as well as message handlers and mixins for message schemas and stream name utilities.
 
-## Example
+## Usage
 
 ```
 $ evt component some_component
