@@ -1,3 +1,6 @@
+# Entity user guide: http://docs.eventide-project.org/user-guide/entities.html
+# Entity snapshotting user guide: http://docs.eventide-project.org/user-guide/entity-store/snapshotting.html
+
 module <%= component_constant_name %>
   class <%= entity_constant_name %>
     include Schema::DataStructure

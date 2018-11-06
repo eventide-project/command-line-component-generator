@@ -1,3 +1,4 @@
+// Session settings user guide: http://docs.eventide-project.org/user-guide/session.html#settings
 {
   "dbname": "message_store",
   "host": "localhost",

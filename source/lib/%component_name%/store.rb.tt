@@ -1,3 +1,5 @@
+# Entity store user guide: http://docs.eventide-project.org/user-guide/entity-store/
+
 module <%= component_constant_name %>
   class Store
     include EntityStore

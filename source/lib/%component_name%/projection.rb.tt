@@ -1,3 +1,6 @@
+# Projection user guide: http://docs.eventide-project.org/user-guide/projection.html
+# Message user guide: http://docs.eventide-project.org/user-guide/messages-and-message-data/
+
 module <%= component_constant_name %>
   class Projection
     include EntityProjection

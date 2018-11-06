@@ -1,3 +1,6 @@
+# Handler user guide: http://docs.eventide-project.org/user-guide/handlers.html
+# Message user guide: http://docs.eventide-project.org/user-guide/messages-and-message-data/
+
 module <%= component_constant_name %>
   module Handlers
     class Commands
