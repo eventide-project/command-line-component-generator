@@ -1,5 +1,6 @@
 require 'eventide/postgres'
 
+# TODO Implement command and event messages
 # require '<%= component_name %>/messages/commands/...'
 # require '<%= component_name %>/messages/events/...'
 

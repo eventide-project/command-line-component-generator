@@ -22,7 +22,7 @@ module <%= component_constant_name %>
 
       category :<%= entity_name %>
 
-      # TODO Implement command handler block
+      # TODO Implement command handler blocks
       # eg:
       # handle DoSomething do |do_something|
       #   <%= entity_name %>_id = do_something.<%= entity_name %>_id
