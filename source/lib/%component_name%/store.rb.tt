@@ -5,7 +5,7 @@ module <%= component_constant_name %>
     category :<%= entity_name %>
     entity <%= entity_constant_name %>
     projection Projection
-    reader MessageStore::Postgres::Read
+    reader MessageStore::Postgres::Read, batch_size: 1000
 
     # Optional snapshotting
     # snapshot EntitySnapshot::Postgres, interval: 1000
