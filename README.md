@@ -7,7 +7,7 @@ The `command_line-component_generator` creates a component skeleton. It generate
 ## Usage
 
 ```
-$ evt component some_component
+$ evt component something_component
 ```
 
 ## Installation
