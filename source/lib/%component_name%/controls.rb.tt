@@ -7,8 +7,8 @@ require '<%= component_name %>/controls/version'
 
 require '<%= component_name %>/controls/<%= entity_name %>'
 
-puts "TODO Implement command controls (if you use this methodology)"
+puts "TODO Controls Loader: Implement command controls (#{__FILE__})\n"
 # require '<%= component_name %>/controls/commands/...'
 
-puts "TODO Implement event controls (if you use this methodology)"
+puts "TODO Controls Loader: Implement event controls (#{__FILE__})\n"
 # require '<%= component_name %>/controls/events/...'
