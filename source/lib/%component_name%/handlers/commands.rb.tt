@@ -7,8 +7,10 @@ module <%= component_constant_name %>
       include Messaging::Handle
       include Messaging::StreamName
       include Log::Dependency
-      include Messages::Commands
-      include Messages::Events
+      puts "TODO Handlers::Commands: include Messages::Commands"
+      # include Messages::Commands
+      puts "TODO Handlers::Commands: include Messages::Events"
+      # include Messages::Events
 
       dependency :write, Messaging::Postgres::Write
       dependency :clock, Clock::UTC
@@ -22,7 +24,7 @@ module <%= component_constant_name %>
 
       category :<%= entity_name %>
 
-      # TODO Implement command handler blocks
+      puts "TODO Handlers::Commands: Implement command handler blocks"
       # eg:
       # handle DoSomething do |do_something|
       #   <%= entity_name %>_id = do_something.<%= entity_name %>_id

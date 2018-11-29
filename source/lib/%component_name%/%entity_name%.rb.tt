@@ -7,8 +7,8 @@ module <%= component_constant_name %>
 
     attribute :id, String
 
-    # TODO Implement attributes
-    # TODO Implement entity logic, predicates, mutations, calculations, etc?
-    # Note: This class's methods should pertain to its attributes
+    puts "TODO Implement attributes"
+    puts "TODO Implement entity logic, predicates, mutations, calculations, etc"
+    # Note: This class's methods should pertain only to its attributes
   end
 end

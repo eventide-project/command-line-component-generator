@@ -7,12 +7,13 @@ module <%= component_constant_name %>
       include Messaging::Handle
       include Messaging::StreamName
       include Log::Dependency
-      include Messages::Commands
-      include Messages::Events
+      puts "TODO Handlers::Events: include Messages::Events"
+      # include Messages::Events
 
-      # TODO Implement event handler blocks
       # Note: Delete this file if not handling events
 
+      puts "TODO Handlers::Events: Implement event handler blocks"
+      # eg:
       # handle SomethingHappened do |something_happened|
       # end
     end
