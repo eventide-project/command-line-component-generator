@@ -4,12 +4,12 @@
 module <%= component_constant_name %>
   class Projection
     include EntityProjection
-    puts "TODO Projection: include Messages::Events (#{__FILE__})\n"
+    # TODO include Messages::Events once events are implemented"
     # include Messages::Events
 
     entity_name :<%= entity_name %>
 
-    puts "TODO Projection: Implement event projection blocks (#{__FILE__})\n"
+    # TODO Implement event projection blocks
     # eg:
     # apply SomethingHappened do |something_happened|
     #   SetAttributes.(<%= entity_name %>, something_happened, copy: [

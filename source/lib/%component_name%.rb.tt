@@ -1,6 +1,6 @@
 require 'eventide/postgres'
 
-puts "TODO Loader: Load command and event message files (#{__FILE__})\n"
+# TODO Load command and event message files"
 # require '<%= component_name %>/messages/commands/...'
 # require '<%= component_name %>/messages/events/...'
 

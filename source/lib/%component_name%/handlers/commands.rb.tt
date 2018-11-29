@@ -7,9 +7,9 @@ module <%= component_constant_name %>
       include Messaging::Handle
       include Messaging::StreamName
       include Log::Dependency
-      puts "TODO Handlers::Commands: include Messages::Commands once commands are implemented (#{__FILE__})\n"
+      # TODO include Messages::Commands once commands are implemented
       # include Messages::Commands
-      puts "TODO Handlers::Commands: include Messages::Events once commands are implemented (#{__FILE__})\n"
+      # TODO include Messages::Events once commands are implemented"
       # include Messages::Events
 
       dependency :write, Messaging::Postgres::Write
@@ -24,7 +24,7 @@ module <%= component_constant_name %>
 
       category :<%= entity_name %>
 
-      puts "TODO Handlers::Commands: Implement command handler blocks (#{__FILE__})\n"
+      # TODO Implement command handler blocks"
       # eg:
       # handle DoSomething do |do_something|
       #   <%= entity_name %>_id = do_something.<%= entity_name %>_id
