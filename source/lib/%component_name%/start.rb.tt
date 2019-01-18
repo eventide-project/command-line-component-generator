@@ -1,0 +1,10 @@
+# Component initiator user guide: http://docs.eventide-project.org/user-guide/component-host.html#component-initiator
+
+module <%= component_constant_name %>
+  module Start
+    def self.call
+      Consumers::Commands.start('<%= entity_stream_name %>:command')
+      Consumers::Events.start('<%= entity_stream_name %>')
+    end
+  end
+end
