@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require_relative '../init'
+
+puts 'Testing Message Store Database Connection'
+puts '= = ='
+
+session = MessageStore::Postgres::Session.build
+
+puts "Connection Status: #{session.open? ? 'open' : 'closed' }"
+
+session.open
+
+puts 'Opening connection'
+puts "Connection Status: #{session.open? ? 'open' : 'closed' }"
+
+sql_command = 'SELECT 1;'
+puts "Executing test command: #{sql_command}"
+
+session.execute(sql_command)
+
+puts 'Closing connection'
+session.close
+
+puts "Connection Status: #{session.open? ? 'open' : 'closed' }"
+
+puts '- - -'
+puts 'done'
