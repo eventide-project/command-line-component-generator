@@ -10,3 +10,6 @@ require '<%= component_name %>/store'
 
 require '<%= component_name %>/handlers/commands'
 require '<%= component_name %>/handlers/events'
+
+require '<%= component_name %>/consumers/commands'
+require '<%= component_name %>/consumers/events'
