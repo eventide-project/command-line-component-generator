@@ -9,7 +9,7 @@ module <%= component_constant_name %>
       include Log::Dependency
       # TODO include Messages::Commands once commands are implemented
       # include Messages::Commands
-      # TODO include Messages::Events once commands are implemented"
+      # TODO include Messages::Events once events are implemented
       # include Messages::Events
 
       dependency :write, Messaging::Postgres::Write
