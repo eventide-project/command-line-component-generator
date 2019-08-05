@@ -1,3 +1,3 @@
 require_relative '../test_init'
 
-ENV['LOG_LEVEL'] = 'data'
+ENV['LOG_LEVEL'] = 'info'
