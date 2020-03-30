@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-command_line-component_generator'
-  s.version = '2.0.1.4'
+  s.version = '2.0.1.5'
   s.summary = 'Command line Eventide component generator'
   s.description = ' '
 
