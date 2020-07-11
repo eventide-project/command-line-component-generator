@@ -5,6 +5,10 @@ set -ue
 pushd ./test/interactive
 pwd
 
+rm -rf gems
+rm -rf .bundle
+rm -f Gemfile.lock
+
 . ./install-gems.sh
 
 rm -rfv *-component
