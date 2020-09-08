@@ -49,6 +49,7 @@ module CommandLine
 
         def assign_executable_attribute
           chmod './install-gems.sh', 0755
+          chmod './symlink-lib.sh', 0755
           chmod './test.sh', 0755
           chmod 'script/test-database-connection', 0755
           chmod 'script/start', 0755
