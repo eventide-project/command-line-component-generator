@@ -1,17 +1,17 @@
-require 'eventide/postgres'
+require "eventide/postgres"
 
 # TODO Load command and event message files"
-# require '<%= component_name %>/messages/commands/...'
-# require '<%= component_name %>/messages/events/...'
+# require "<%= component_name %>/messages/commands/..."
+# require "<%= component_name %>/messages/events/..."
 
-require '<%= component_name %>/<%= entity_name %>'
-require '<%= component_name %>/projection'
-require '<%= component_name %>/store'
+require "<%= component_name %>/<%= entity_name %>"
+require "<%= component_name %>/projection"
+require "<%= component_name %>/store"
 
-require '<%= component_name %>/handlers/commands'
-require '<%= component_name %>/handlers/events'
+require "<%= component_name %>/handlers/commands"
+require "<%= component_name %>/handlers/events"
 
-require '<%= component_name %>/consumers/commands'
-require '<%= component_name %>/consumers/events'
+require "<%= component_name %>/consumers/commands"
+require "<%= component_name %>/consumers/events"
 
-require '<%= component_name %>/start'
+require "<%= component_name %>/start"

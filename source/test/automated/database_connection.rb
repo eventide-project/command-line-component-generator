@@ -1,7 +1,7 @@
 # This test is for example purposes. You may remove it once it has served its purpose.
 # More on the TestBench test framework for Ruby: https://github.com/ntl/test-bench/blob/master/README.adoc
 
-require_relative './automated_init'
+require_relative "./automated_init"
 
 context "Database Connection" do
   session = MessageStore::Postgres::Session.build
@@ -10,7 +10,7 @@ context "Database Connection" do
 
   test "Connects on first use" do
     refute_raises do
-      session.execute('SELECT 1;')
+      session.execute("SELECT 1;")
     end
   end
 

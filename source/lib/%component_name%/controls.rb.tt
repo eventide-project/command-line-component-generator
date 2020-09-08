@@ -1,14 +1,14 @@
-require 'clock/controls'
-require 'identifier/uuid/controls'
+require "clock/controls"
+require "identifier/uuid/controls"
 
-require '<%= component_name %>/controls/id'
-require '<%= component_name %>/controls/time'
-require '<%= component_name %>/controls/version'
+require "<%= component_name %>/controls/id"
+require "<%= component_name %>/controls/time"
+require "<%= component_name %>/controls/version"
 
-require '<%= component_name %>/controls/<%= entity_name %>'
+require "<%= component_name %>/controls/<%= entity_name %>"
 
 # TODO Implement command controls (if using controls as part of your testing methodology)"
-# require '<%= component_name %>/controls/commands/...'
+# require "<%= component_name %>/controls/commands/..."
 
 # TODO Implement event controls (if using controls as part of your testing methodology)"
-# require '<%= component_name %>/controls/events/...'
+# require "<%= component_name %>/controls/events/..."

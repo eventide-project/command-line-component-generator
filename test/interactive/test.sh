@@ -9,13 +9,13 @@ rm -rf gems
 rm -rf .bundle
 rm -f Gemfile.lock
 
-. ./install-gems.sh
+POSTURE=development ./install-gems.sh
 
 rm -rfv *-component
 bundle exec evt component something_component
 
 pushd ./something-component
-. ./install-gems.sh
+POSTURE=development ./install-gems.sh
 
 rm -fv something_component*.gem
 gem build something_component

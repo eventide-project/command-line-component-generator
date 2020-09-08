@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gemspec name: '<%= component_name %>'
+gemspec name: "<%= component_name %>"
 
-gem 'evt-component_host'
+gem "evt-component_host"

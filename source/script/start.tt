@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require_relative '../init'
+require_relative "../init"
 
-require 'component_host'
+require "component_host"
 
-ComponentHost.start('<%= service_name %>-component') do |host|
+ComponentHost.start("<%= service_name %>-component") do |host|
   host.register(<%= component_constant_name %>::Start)
 end

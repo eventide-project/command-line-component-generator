@@ -3,8 +3,8 @@
 module <%= component_constant_name %>
   module Start
     def self.call
-      Consumers::Commands.start('<%= entity_stream_name %>:command')
-      Consumers::Events.start('<%= entity_stream_name %>')
+      Consumers::Commands.start("<%= entity_stream_name %>:command")
+      Consumers::Events.start("<%= entity_stream_name %>")
     end
   end
 end
